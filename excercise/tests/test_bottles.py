@@ -26,14 +26,13 @@ def test_verse_2():
         
     assert expected == Bottles().verse(2)
 
-#   def test_verse_1
-#     expected =
-#       "1 bottle of beer on the wall, " +
-#       "1 bottle of beer.\n" +
-#       "Take it down and pass it around, " +
-#       "no more bottles of beer on the wall.\n"
-#      assert_equal expected, Bottles.new.verse(1)
-#   end
+def test_verse_1():
+    expected = "1 bottle of beer on the wall, " + \
+        "1 bottle of beer.\n" + \
+        "Take it down and pass it around, " + \
+        "no more bottles of beer on the wall.\n"
+
+    assert expected == Bottles().verse(1)
 
 #   def test_verse_0
 #     expected =
