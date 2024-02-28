@@ -13,7 +13,7 @@ class Bottles():
         return result
 
     def song(self):
-        self.verses(99, 0)
+        return self.verses(99, 0)
 
     # private
 
