@@ -1,47 +1,54 @@
-# class Bottles
-#   def verse(n)
-#     sentence(n).capitalize + ", " +
-#     sentence(n, is_on_the_wall: false) + ".\n" +
-#     third_line(n) +
-#     sentence(n - 1, is_last: true) + ".\n"
-#   end
+class Bottles():
+    
+    def verse(self, n):
+        return self.sentence(n).capitalize() + ", " + \
+        self.sentence(n, is_on_the_wall=False) + ".\n" + \
+        self.third_line(n) + \
+        self.sentence(n - 1, is_last=True) + ".\n"
 
-#   def verses(upper, lower)
-#     upper.downto(lower).map { |n| verse(n) }.join("\n")
-#   end
+    def verses(self, upper, lower):
+        for n in range(upper, lower-1, -1):
+            "/n".join(self.verse(n))
 
-#   def song
-#     verses(99, 0)
-#   end
+    def song(self):
+        self.verses(99, 0)
 
-#   private
+    # private
 
-#   def sentence(n, is_last: false, is_on_the_wall: true)
-#     count(n) + bottles(n) + ' of beer' + on_the_wall(is_on_the_wall)
-#   end
+    def sentence(self, n, is_last=False, is_on_the_wall=True):
+        return self.count(n) + self.bottles(n) + ' of beer' + self.on_the_wall(is_on_the_wall)
 
-#   def count(n)
-#     n > 0 ? n.to_s : n == -1 ? 99.to_s : 'no more'
-#   end
+    def count(self, n):
+        if n > 0:
+            return str(n)
+        elif n == -1:
+            return str(99)
+        else:
+            return 'no more'
 
-#   def bottles(n)
-#     ' bottle' + (singular?(n) ? '' : 's')
-#   end
+    def bottles(self, n):
+        if self.singular(n):
+            return ' bottle'
+        else:
+            return ' bottles'
 
-#   def singular?(n)
-#     n == 1
-#   end
+    def singular(self, n):
+        return n == 1
 
-#   def on_the_wall(is_on_the_wall)
-#     is_on_the_wall ? ' on the wall' : ''
-#   end
+    def on_the_wall(self, is_on_the_wall):
+        if is_on_the_wall:
+            return ' on the wall'
+        else:
+            return ''
 
-#   def how_many(n)
-#     singular?(n) ? 'it' : 'one'
-#   end
+    def how_many(self, n):
+        if self.singular(n):
+            return 'it'
+        else:
+            return 'one'
 
-#   def third_line(n)
-#     return 'Go to the store and buy some more, ' if n == 0
-#     "Take #{how_many(n)} down and pass it around, "
-#   end
-# end
+    def third_line(self, n):
+        if n == 0:
+            return "Go to the store and buy some more, "
+        else:
+            return f"Take {self.how_many(n)} down and pass it around, "
