@@ -7,8 +7,10 @@ class Bottles():
         self.sentence(n - 1, is_last=True) + ".\n"
 
     def verses(self, upper, lower):
+        result = ''
         for n in range(upper, lower-1, -1):
-            "/n".join(self.verse(n))
+            result += self.verse(n) + "\n"
+        return result
 
     def song(self):
         self.verses(99, 0)
