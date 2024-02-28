@@ -9,14 +9,14 @@ def test_the_first_verse():
     assert expected == Bottles().verse(99)
 
 
-#   def test_another_verse
-#     expected =
-#       "3 bottles of beer on the wall, " +
-#       "3 bottles of beer.\n" +
-#       "Take one down and pass it around, " +
-#       "2 bottles of beer on the wall.\n"
-#     assert_equal expected, Bottles.new.verse(3)
-#   end
+def test_another_verse():
+    expected = "3 bottles of beer on the wall, " + \
+        "3 bottles of beer.\n" + \
+        "Take one down and pass it around, " + \
+        "2 bottles of beer on the wall.\n"
+    
+    assert expected == Bottles().verse(3)
+
 
 #   def test_verse_2
 #     expected =
