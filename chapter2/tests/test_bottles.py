@@ -6,8 +6,8 @@ def test_the_first_verse():
                "99 bottles of milk.\n" + \
                "Take one down and pass it around, " + \
                "98 bottles of milk on the wall.\n"
-    actual = Bottles().verse(99)        
-    assert expected == actual
+    
+    assert expected == Bottles().verse(99)
     
     
 def test_another_verse():
@@ -15,8 +15,8 @@ def test_another_verse():
                "3 bottles of milk.\n" + \
                "Take one down and pass it around, " + \
                "2 bottles of milk on the wall.\n"
-    actual = Bottles().verse(3)        
-    assert expected == actual
+    
+    assert expected == Bottles().verse(3)  
     
     
 def test_verse_2():
@@ -24,5 +24,5 @@ def test_verse_2():
                "2 bottles of milk.\n" + \
                "Take one down and pass it around, " + \
                "1 bottle of milk on the wall.\n"
-    actual = Bottles().verse(2)        
-    assert expected == actual
+    
+    assert expected == Bottles().verse(2)
