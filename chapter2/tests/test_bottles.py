@@ -44,3 +44,12 @@ def test_verse_0():
                "99 bottles of milk on the wall.\n"
     
     assert expected == Bottles().verse(0)
+    
+
+def test_a_couple_of_verses():
+    expected = "99 bottles of milk on the wall, " + "99 bottles of milk.\n" + \
+               "Take one down and pass it around, " + "98 bottles of milk on the wall.\n" + "\n" + \
+               "98 bottles of milk on the wall, " + "98 bottles of milk.\n" + \
+               "Take one down and pass it around, " + "97 bottles of milk on the wall.\n"
+
+    assert expected == Bottles().verses(99,98)
