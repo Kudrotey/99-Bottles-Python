@@ -29,3 +29,7 @@ class Bottles():
             result += self.verse(n) + "\n"
         result = result[:-1]
         return result
+    
+    
+    def song(self):
+        return self.verses(99,0)
