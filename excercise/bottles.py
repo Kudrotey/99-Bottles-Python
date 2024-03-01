@@ -10,6 +10,7 @@ class Bottles():
         result = ''
         for n in range(upper, lower-1, -1):
             result += self.verse(n) + "\n"
+        result = result[:-1]
         return result
 
     def song(self):
