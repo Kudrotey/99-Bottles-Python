@@ -10,7 +10,7 @@ class Bottles():
                 return "1 bottle of milk on the wall, " + \
                        "1 bottle of milk.\n" + \
                        "Take one down and pass it around, " + \
-                       "no more bottle of milk on the wall.\n"
+                       "no more bottles of milk on the wall.\n"
             case 2:
                 return "2 bottles of milk on the wall, " + \
                        "2 bottles of milk.\n" + \
@@ -23,5 +23,9 @@ class Bottles():
                        f"{number - 1} bottles of milk on the wall.\n"
                        
     
-    def verses(self, a, b):
-        return self.verse(99) + "\n" + self.verse(98)
+    def verses(self, upper, lower):
+        result = ''
+        for n in range(upper, lower-1, -1):
+            result += self.verse(n) + "\n"
+        result = result[:-1]
+        return result

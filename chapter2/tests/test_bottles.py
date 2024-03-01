@@ -32,7 +32,7 @@ def test_verse_1():
     expected = "1 bottle of milk on the wall, " + \
                "1 bottle of milk.\n" + \
                "Take one down and pass it around, " + \
-               "no more bottle of milk on the wall.\n"
+               "no more bottles of milk on the wall.\n"
     
     assert expected == Bottles().verse(1)
     
@@ -58,3 +58,22 @@ def test_the_first_two_verses():
                "97 bottles of milk on the wall.\n"
 
     assert expected == Bottles().verses(99,98)
+    
+
+def test_the_last_three_verses():
+    expected = "2 bottles of milk on the wall, " + \
+               "2 bottles of milk.\n" + \
+               "Take one down and pass it around, " + \
+               "1 bottle of milk on the wall.\n" + \
+               "\n" + \
+               "1 bottle of milk on the wall, " + \
+               "1 bottle of milk.\n" + \
+               "Take one down and pass it around, " + \
+               "no more bottles of milk on the wall.\n" + \
+               "\n" + \
+               "No more bottles of milk on the wall, " + \
+               "no more bottles of milk.\n" + \
+               "Go to the store and buy some more, " + \
+               "99 bottles of milk on the wall.\n"
+
+    assert expected == Bottles().verses(2,0)
