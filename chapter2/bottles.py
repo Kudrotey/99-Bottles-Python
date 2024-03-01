@@ -1,4 +1,14 @@
 class Bottles():
+    def song(self):
+        return self.verses(99,0)
+    
+    def verses(self, upper, lower):
+        result = ''
+        for n in range(upper, lower-1, -1):
+            result += self.verse(n) + "\n"
+        result = result[:-1]
+        return result
+    
     def verse(self, number):
         match number:
             case 0:
@@ -23,13 +33,6 @@ class Bottles():
                        f"{number - 1} bottles of milk on the wall.\n"
                        
     
-    def verses(self, upper, lower):
-        result = ''
-        for n in range(upper, lower-1, -1):
-            result += self.verse(n) + "\n"
-        result = result[:-1]
-        return result
+
     
     
-    def song(self):
-        return self.verses(99,0)
