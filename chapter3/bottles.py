@@ -1,15 +1,15 @@
 class Bottles():
-    def song(self):
+    def song(self) -> str:
         return self.verses(99,0)
     
-    def verses(self, upper, lower):
+    def verses(self, upper:int, lower:int) -> str:
         result = ''
         for n in range(upper, lower-1, -1):
             result += self.verse(n) + "\n"
         result = result[:-1]
         return result
     
-    def verse(self, number):
+    def verse(self, number:int) -> str:
         match number:
             case 0:
                 return "No more bottles of milk on the wall, " + \
