@@ -30,7 +30,10 @@ class Bottles():
                 return f"{number} bottles of milk on the wall, " + \
                        f"{number} bottles of milk.\n" + \
                        f"Take one down and pass it around, " + \
-                       f"{number - 1} bottles of milk on the wall.\n"
+                       f"{number - 1} {self.container()} of milk on the wall.\n"
+                       
+    def container(self) -> str:
+        return 'bottles'
                        
     
 
