@@ -32,7 +32,9 @@ class Bottles():
                        f"Take one down and pass it around, " + \
                        f"{number - 1} {self.container()} of milk on the wall.\n"
                        
-    def container(self) -> str:
+    def container(self, number='FIX_ME') -> str:
+        if number == 1:
+            return 'bottle'
         return 'bottles'
                        
     
