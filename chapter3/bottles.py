@@ -32,7 +32,3 @@ class Bottles():
             return 'bottle'
         return 'bottles'
                        
-    
-
-    
-    
