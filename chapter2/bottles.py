@@ -19,7 +19,7 @@ class Bottles():
             case 1:
                 return "1 bottle of milk on the wall, " + \
                        "1 bottle of milk.\n" + \
-                       "Take one down and pass it around, " + \
+                       "Take it down and pass it around, " + \
                        "no more bottles of milk on the wall.\n"
             case 2:
                 return "2 bottles of milk on the wall, " + \
