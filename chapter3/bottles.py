@@ -18,7 +18,7 @@ class Bottles():
                        "99 bottles of milk on the wall.\n"
             case 1:
                 return f"{number} {self.container(number)} of milk on the wall, " + \
-                       f"1 bottle of milk.\n" + \
+                       f"{number} {self.container(number)} of milk.\n" + \
                        f"Take one down and pass it around, " + \
                        f"no more bottles of milk on the wall.\n"
             case _:
