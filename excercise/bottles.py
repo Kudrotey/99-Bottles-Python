@@ -19,7 +19,7 @@ class Bottles():
     # private
 
     def sentence(self, n, is_last=False, is_on_the_wall=True):
-        return self.count(n) + self.bottles(n) + ' of beer' + self.on_the_wall(is_on_the_wall)
+        return self.count(n) + self.bottles(n) + ' of milk' + self.on_the_wall(is_on_the_wall)
 
     def count(self, n):
         if n > 0:
