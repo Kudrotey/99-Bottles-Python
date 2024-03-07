@@ -32,7 +32,7 @@ class Bottles():
             return 'bottle'
         return 'bottles'
     
-    def pronoun(self, number:str) -> str:
+    def pronoun(self, number:int) -> str:
         if number == 1:
             return 'it'
         return 'one'
