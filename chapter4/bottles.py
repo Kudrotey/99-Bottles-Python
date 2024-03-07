@@ -17,13 +17,13 @@ class Bottles():
                        "Go to the store and buy some more, " + \
                        "99 bottles of milk on the wall.\n"
             case 1:
-                return "1 bottle of milk on the wall, " + \
-                       "1 bottle of milk.\n" + \
-                       "Take one down and pass it around, " + \
-                       "no more bottles of milk on the wall.\n"
+                return f"{number} {self.container(number)} of milk on the wall, " + \
+                       f"{number} {self.container(number)} of milk.\n" + \
+                       f"Take it down and pass it around, " + \
+                       f"no more bottles of milk on the wall.\n"
             case _:
-                return f"{number} bottles of milk on the wall, " + \
-                       f"{number} bottles of milk.\n" + \
+                return f"{number} {self.container(number)} of milk on the wall, " + \
+                       f"{number} {self.container(number)} of milk.\n" + \
                        f"Take one down and pass it around, " + \
                        f"{number - 1} {self.container(number - 1)} of milk on the wall.\n"
                        
