@@ -1,3 +1,4 @@
+from typing import Union
 class Bottles():
     def song(self) -> str:
         return self.verses(99,0)
@@ -20,12 +21,12 @@ class Bottles():
                 return f"{number} {self.container(number)} of milk on the wall, " + \
                        f"{number} {self.container(number)} of milk.\n" + \
                        f"Take {self.pronoun(number)} down and pass it around, " + \
-                       f"no more bottles of milk on the wall.\n"
+                       f"{self.quantity(number - 1)} bottles of milk on the wall.\n"
             case _:
                 return f"{number} {self.container(number)} of milk on the wall, " + \
                        f"{number} {self.container(number)} of milk.\n" + \
                        f"Take {self.pronoun(number)} down and pass it around, " + \
-                       f"{number - 1} {self.container(number - 1)} of milk on the wall.\n"
+                       f"{self.quantity(number - 1)} {self.container(number - 1)} of milk on the wall.\n"
                        
     def container(self, number:int) -> str:
         if number == 1:
@@ -36,3 +37,8 @@ class Bottles():
         if number == 1:
             return 'it'
         return 'one'
+    
+    def quantity(self, number:int) -> Union[str, int]:
+        if number == 0:
+            return 'no more'
+        return number
