@@ -1,5 +1,3 @@
-from typing import Union
-
 class Bottles():
     def song(self) -> str:
         return self.verses(99,0)
