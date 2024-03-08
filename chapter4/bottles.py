@@ -15,12 +15,12 @@ class Bottles():
                 return f"{self.quantity(number).capitalize()} {self.container(number)} of milk on the wall, " + \
                        f"{self.quantity(number)} {self.container(number)} of milk.\n" + \
                        f"{self.action(number)}, " + \
-                       f"99 bottles of milk on the wall.\n"
+                       f"{self.quantity(self.successor(number))} {self.container(number - 1)} of milk on the wall.\n"
             case _:
                 return f"{self.quantity(number).capitalize()} {self.container(number)} of milk on the wall, " + \
                        f"{self.quantity(number)} {self.container(number)} of milk.\n" + \
                        f"{self.action(number)}, " + \
-                       f"{self.quantity(number - 1)} {self.container(number - 1)} of milk on the wall.\n"
+                       f"{self.quantity(self.successor(number))} {self.container(number - 1)} of milk on the wall.\n"
                        
     def container(self, number:int) -> str:
         if number == 1:
@@ -41,3 +41,8 @@ class Bottles():
         if number == 0:
             return "Go to the store and buy some more"
         return f"Take {self.pronoun(number)} down and pass it around"
+    
+    def successor(self, number:int) -> int:
+        if number == 0:
+            return 99
+        return number - 1
