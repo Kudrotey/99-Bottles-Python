@@ -10,12 +10,10 @@ class Bottles():
         return result
     
     def verse(self, number:int) -> str:
-        match number:
-            case _:
-                return f"{self.quantity(number).capitalize()} {self.container(number)} of milk on the wall, " + \
-                       f"{self.quantity(number)} {self.container(number)} of milk.\n" + \
-                       f"{self.action(number)}, " + \
-                       f"{self.quantity(self.successor(number))} {self.container(self.successor(number))} of milk on the wall.\n"
+        return f"{self.quantity(number).capitalize()} {self.container(number)} of milk on the wall, " + \
+                f"{self.quantity(number)} {self.container(number)} of milk.\n" + \
+                f"{self.action(number)}, " + \
+                f"{self.quantity(self.successor(number))} {self.container(self.successor(number))} of milk on the wall.\n"
                        
     def container(self, number:int) -> str:
         if number == 1:
