@@ -14,12 +14,12 @@ class Bottles():
             case 0:
                 return f"{self.quantity(number).capitalize()} {self.container(number)} of milk on the wall, " + \
                        f"{self.quantity(number)} {self.container(number)} of milk.\n" + \
-                       f"Go to the store and buy some more, " + \
+                       f"{self.action(number)}, " + \
                        f"99 bottles of milk on the wall.\n"
             case _:
                 return f"{self.quantity(number).capitalize()} {self.container(number)} of milk on the wall, " + \
                        f"{self.quantity(number)} {self.container(number)} of milk.\n" + \
-                       f"Take {self.pronoun(number)} down and pass it around, " + \
+                       f"{self.action(number)}, " + \
                        f"{self.quantity(number - 1)} {self.container(number - 1)} of milk on the wall.\n"
                        
     def container(self, number:int) -> str:
@@ -36,3 +36,8 @@ class Bottles():
         if number == 0:
             return 'no more'
         return str(number)
+    
+    def action(self, number:int) -> str:
+        if number == 0:
+            return "Go to the store and buy some more"
+        return f"Take {self.pronoun(number)} down and pass it around"
