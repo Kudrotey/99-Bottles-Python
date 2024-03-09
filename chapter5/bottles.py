@@ -16,26 +16,45 @@ class Bottles():
                 f"{self.quantity(self.successor(number))} {self.container(self.successor(number))} of milk on the wall.\n"
                        
     def container(self, number:int) -> str:
-        if number == 1:
+        return BottleNumber(number).container(number)
+    
+    def pronoun(self, number:int) -> str:
+        return BottleNumber(number).pronoun(number)
+    
+    def quantity(self, number:int) -> str:
+        return BottleNumber(number).quantity(number)
+    
+    def action(self, number:int) -> str:
+        return BottleNumber(number).action(number)
+    
+    def successor(self, number:int) -> int:
+        return BottleNumber(number).successor(number)
+    
+class BottleNumber():
+    def __init__(self, number:int) -> None:
+        self.number = number
+        
+    def container(self, number:int) -> str:
+        if self.number == 1:
             return 'bottle'
         return 'bottles'
     
     def pronoun(self, number:int) -> str:
-        if number == 1:
+        if self.number == 1:
             return 'it'
         return 'one'
     
     def quantity(self, number:int) -> str:
-        if number == 0:
+        if self.number == 0:
             return 'no more'
-        return str(number)
+        return str(self.number)
     
     def action(self, number:int) -> str:
-        if number == 0:
+        if self.number == 0:
             return "Go to the store and buy some more"
-        return f"Take {self.pronoun(number)} down and pass it around"
+        return f"Take {self.pronoun(self.number)} down and pass it around"
     
     def successor(self, number:int) -> int:
-        if number == 0:
+        if self.number == 0:
             return 99
-        return number - 1
+        return self.number - 1
