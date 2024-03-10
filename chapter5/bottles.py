@@ -10,10 +10,13 @@ class Bottles():
         return result
     
     def verse(self, number:int) -> str:
-        return f"{self.quantity(number).capitalize()} {self.container(number)} of milk on the wall, " + \
-                f"{self.quantity(number)} {self.container(number)} of milk.\n" + \
-                f"{self.action(number)}, " + \
-                f"{self.quantity(self.successor(number))} {self.container(self.successor(number))} of milk on the wall.\n"
+        bottle_number = BottleNumber(number)
+        next_bottle_number = BottleNumber(bottle_number.successor())
+        
+        return f"{bottle_number.quantity().capitalize()} {bottle_number.container()} of milk on the wall, " + \
+                f"{bottle_number.quantity()} {bottle_number.container()} of milk.\n" + \
+                f"{bottle_number.action()}, " + \
+                f"{next_bottle_number.quantity()} {next_bottle_number.container()} of milk on the wall.\n"
                        
     def container(self, number:int) -> str:
         return BottleNumber(number).container()
