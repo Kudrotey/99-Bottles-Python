@@ -17,21 +17,6 @@ class Bottles():
                 f"{bottle_number.quantity()} {bottle_number.container()} of milk.\n" + \
                 f"{bottle_number.action()}, " + \
                 f"{next_bottle_number.quantity()} {next_bottle_number.container()} of milk on the wall.\n"
-                       
-    def container(self, number:int) -> str:
-        return BottleNumber(number).container()
-    
-    def pronoun(self, number:int) -> str:
-        return BottleNumber(number).pronoun()
-    
-    def quantity(self, number:int) -> str:
-        return BottleNumber(number).quantity()
-    
-    def action(self, number:int) -> str:
-        return BottleNumber(number).action()
-    
-    def successor(self, number:int) -> int:
-        return BottleNumber(number).successor()
     
 class BottleNumber():
     def __init__(self, number:int) -> None:
