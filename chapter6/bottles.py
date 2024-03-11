@@ -44,8 +44,6 @@ class BottleNumber():
         return f"Take {self.pronoun()} down and pass it around"
     
     def successor(self) -> int:
-        if self.number == 0:
-            return 99
         return self.number - 1
     
     def __str__(self) -> str:
@@ -58,3 +56,6 @@ class BottleNumber0(BottleNumber):
     
     def action(self) -> str:
         return "Go to the store and buy some more"
+    
+    def successor(self) -> int:
+        return 99
