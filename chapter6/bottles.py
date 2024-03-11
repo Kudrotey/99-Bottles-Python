@@ -21,6 +21,8 @@ class Bottles():
     def bottle_number_for(self, number:int):
         if number == 0:
             return BottleNumber0(number)
+        elif number == 1:
+            return BottleNumber1(number)
         return BottleNumber(number)
     
 class BottleNumber():
@@ -28,8 +30,6 @@ class BottleNumber():
         self.number = number
         
     def container(self) -> str:
-        if self.number == 1:
-            return 'bottle'
         return 'bottles'
     
     def pronoun(self) -> str:
@@ -59,3 +59,8 @@ class BottleNumber0(BottleNumber):
     
     def successor(self) -> int:
         return 99
+    
+
+class BottleNumber1(BottleNumber):
+    def container(self) -> str:
+        return 'bottle'
