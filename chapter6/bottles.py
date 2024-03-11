@@ -19,11 +19,13 @@ class Bottles():
                f"{next_bottle_number} of milk on the wall.\n"
                
     def bottle_number_for(self, number:int):
-        if number == 0:
-            return BottleNumber0(number)
-        elif number == 1:
-            return BottleNumber1(number)
-        return BottleNumber(number)
+        match number:
+            case 0:
+                return BottleNumber0(number)
+            case 1:
+                return BottleNumber1(number)
+            case _:
+                return BottleNumber(number)
     
 class BottleNumber():
     def __init__(self, number:int) -> None:
