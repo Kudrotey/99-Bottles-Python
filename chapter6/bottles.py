@@ -33,8 +33,6 @@ class BottleNumber():
         return 'bottles'
     
     def pronoun(self) -> str:
-        if self.number == 1:
-            return 'it'
         return 'one'
     
     def quantity(self) -> str:
@@ -64,3 +62,6 @@ class BottleNumber0(BottleNumber):
 class BottleNumber1(BottleNumber):
     def container(self) -> str:
         return 'bottle'
+    
+    def pronoun(self) -> str:
+        return 'it'
