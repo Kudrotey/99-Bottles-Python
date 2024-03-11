@@ -29,6 +29,9 @@ class BottleNumber():
     def __init__(self, number:int) -> None:
         self.number = number
         
+    def __str__(self) -> str:
+        return f"{self.quantity()} {self.container()}"
+    
     def container(self) -> str:
         return 'bottles'
     
@@ -44,10 +47,7 @@ class BottleNumber():
     def successor(self) -> int:
         return self.number - 1
     
-    def __str__(self) -> str:
-        return f"{self.quantity()} {self.container()}"
     
-
 class BottleNumber0(BottleNumber):
     def quantity(self) -> str:
         return 'no more'
