@@ -38,13 +38,9 @@ class BottleNumber():
         return 'one'
     
     def quantity(self) -> str:
-        if self.number == 0:
-            return 'no more'
         return str(self.number)
     
     def action(self) -> str:
-        if self.number == 0:
-            return "Go to the store and buy some more"
         return f"Take {self.pronoun()} down and pass it around"
     
     def successor(self) -> int:
@@ -59,3 +55,6 @@ class BottleNumber():
 class BottleNumber0(BottleNumber):
     def quantity(self) -> str:
         return 'no more'
+    
+    def action(self) -> str:
+        return "Go to the store and buy some more"
