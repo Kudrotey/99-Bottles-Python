@@ -6,26 +6,16 @@ class Bottles():
         result = ''
         for n in range(upper, lower-1, -1):
             result += self.verse(n) + "\n"
-        result = result[:-1]
-        return result
+        return result[:-1]
     
     def verse(self, number:int) -> str:
-        bottle_number = self.bottle_number_for(number)
-        next_bottle_number = self.bottle_number_for(bottle_number.successor())
+        bottle_number = BottleNumber(number).for_(number)
         
         return f"{bottle_number}".capitalize() + " of milk on the wall, " + \
                f"{bottle_number} of milk.\n" + \
                f"{bottle_number.action()}, " + \
-               f"{next_bottle_number} of milk on the wall.\n"
+               f"{bottle_number.successor()} of milk on the wall.\n"
                
-    def bottle_number_for(self, number:int):
-        match number:
-            case 0:
-                return BottleNumber0(number)
-            case 1:
-                return BottleNumber1(number)
-            case _:
-                return BottleNumber(number)
     
 class BottleNumber():
     def __init__(self, number:int) -> None:
@@ -47,7 +37,16 @@ class BottleNumber():
         return f"Take {self.pronoun()} down and pass it around"
     
     def successor(self) -> int:
-        return self.number - 1
+        return BottleNumber(self.number - 1).for_(self.number - 1)
+    
+    def for_(self, number:int):
+        match number:
+            case 0:
+                return BottleNumber0(number)
+            case 1:
+                return BottleNumber1(number)
+            case _:
+                return BottleNumber(number)
     
     
 class BottleNumber0(BottleNumber):
@@ -58,7 +57,7 @@ class BottleNumber0(BottleNumber):
         return "Go to the store and buy some more"
     
     def successor(self) -> int:
-        return 99
+        return BottleNumber(self.number).for_(99)
     
 
 class BottleNumber1(BottleNumber):
