@@ -10,8 +10,9 @@ class Bottles():
         return result
     
     def verse(self, number:int) -> str:
-        bottle_number = BottleNumber(number)
-        next_bottle_number = BottleNumber(bottle_number.successor())
+        bottle_number = BottleNumber0(number) if number == 0 else BottleNumber(number)
+        succ = bottle_number.successor()
+        next_bottle_number = BottleNumber0(succ) if succ == 0 else BottleNumber(succ)
         
         return f"{bottle_number}".capitalize() + " of milk on the wall, " + \
                f"{bottle_number} of milk.\n" + \
@@ -49,3 +50,8 @@ class BottleNumber():
     
     def __str__(self) -> str:
         return f"{self.quantity()} {self.container()}"
+    
+
+class BottleNumber0(BottleNumber):
+    def quantity(self) -> str:
+        return 'no more'
