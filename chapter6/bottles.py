@@ -10,14 +10,18 @@ class Bottles():
         return result
     
     def verse(self, number:int) -> str:
-        bottle_number = BottleNumber0(number) if number == 0 else BottleNumber(number)
-        succ = bottle_number.successor()
-        next_bottle_number = BottleNumber0(succ) if succ == 0 else BottleNumber(succ)
+        bottle_number = self.bottle_number_for(number)
+        next_bottle_number = self.bottle_number_for(bottle_number.successor())
         
         return f"{bottle_number}".capitalize() + " of milk on the wall, " + \
                f"{bottle_number} of milk.\n" + \
                f"{bottle_number.action()}, " + \
                f"{next_bottle_number} of milk on the wall.\n"
+               
+    def bottle_number_for(self, number:int):
+        if number == 0:
+            return BottleNumber0(number)
+        return BottleNumber(number)
     
 class BottleNumber():
     def __init__(self, number:int) -> None:
