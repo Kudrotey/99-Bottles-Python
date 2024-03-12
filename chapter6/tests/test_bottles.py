@@ -264,8 +264,8 @@ def test_the_whole_song():
         "8 bottles of milk on the wall, 8 bottles of milk.\n" + \
         "Take one down and pass it around, 7 bottles of milk on the wall.\n\n" + \
         "7 bottles of milk on the wall, 7 bottles of milk.\n" + \
-        "Take one down and pass it around, 6 bottles of milk on the wall.\n\n" + \
-        "6 bottles of milk on the wall, 6 bottles of milk.\n" + \
+        "Take one down and pass it around, 1 six-pack of milk on the wall.\n\n" + \
+        "1 six-pack of milk on the wall, 1 six-pack of milk.\n" + \
         "Take one down and pass it around, 5 bottles of milk on the wall.\n\n" + \
         "5 bottles of milk on the wall, 5 bottles of milk.\n" + \
         "Take one down and pass it around, 4 bottles of milk on the wall.\n\n" + \
