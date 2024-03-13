@@ -23,7 +23,7 @@ class BottleVerse():
     def __init__(self, number) -> None:
         self.number = number
         
-    def verse(self, number:int) -> str:
+    def lyrics(self, number:int) -> str:
         bottle_number = BottleNumber(number).for_(number)
         
         return f"{bottle_number}".capitalize() + " of milk on the wall, " + \
