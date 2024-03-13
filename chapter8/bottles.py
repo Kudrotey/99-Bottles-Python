@@ -10,13 +10,6 @@ class Bottles():
     
     def verse(self, number:int) -> str:
         return BottleVerse(number).verse(number)
-        
-        # bottle_number = BottleNumber(number).for_(number)
-        
-        # return f"{bottle_number}".capitalize() + " of milk on the wall, " + \
-        #        f"{bottle_number} of milk.\n" + \
-        #        f"{bottle_number.action()}, " + \
-        #        f"{bottle_number.successor()} of milk on the wall.\n"
                
 
 class BottleVerse():
