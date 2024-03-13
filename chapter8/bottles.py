@@ -18,8 +18,8 @@ class Bottles():
                
 
 class BottleVerse():
-    def __init__(self) -> None:
-        pass
+    def __init__(self, number) -> None:
+        self.number = number
 
 
 class BottleNumber():
