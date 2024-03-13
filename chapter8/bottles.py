@@ -9,7 +9,7 @@ class Bottles():
         return result[:-1]
     
     def verse(self, number:int) -> str:
-        # return BottleVerse(number).lyrics()
+        return BottleVerse(number).lyrics()
         
         bottle_number = BottleNumber(number).for_(number)
         
