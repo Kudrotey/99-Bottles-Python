@@ -20,6 +20,14 @@ class Bottles():
 class BottleVerse():
     def __init__(self, number) -> None:
         self.number = number
+        
+    def verse(self, number:int) -> str:
+        bottle_number = BottleNumber(number).for_(number)
+        
+        return f"{bottle_number}".capitalize() + " of milk on the wall, " + \
+               f"{bottle_number} of milk.\n" + \
+               f"{bottle_number.action()}, " + \
+               f"{bottle_number.successor()} of milk on the wall.\n"
 
 
 class BottleNumber():
