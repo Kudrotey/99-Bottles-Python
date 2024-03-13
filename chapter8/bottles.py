@@ -16,7 +16,12 @@ class Bottles():
                f"{bottle_number.action()}, " + \
                f"{bottle_number.successor()} of milk on the wall.\n"
                
-    
+
+class BottleVerse():
+    def __init__(self) -> None:
+        pass
+
+
 class BottleNumber():
     def __init__(self, number:int) -> None:
         self.number = number
