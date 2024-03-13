@@ -9,6 +9,8 @@ class Bottles():
         return result[:-1]
     
     def verse(self, number:int) -> str:
+        BottleVerse(number).verse(number)
+        
         bottle_number = BottleNumber(number).for_(number)
         
         return f"{bottle_number}".capitalize() + " of milk on the wall, " + \
