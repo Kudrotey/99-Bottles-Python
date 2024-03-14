@@ -17,19 +17,17 @@ class Bottles():
 
 class BottleVerse():
     def __init__(self, number) -> None:
-        self.number = number
+        self.bottle_number = number
     
     @classmethod
     def get_lyrics(cls, number):
-        return cls(number).lyrics()
+        return cls(BottleNumber.for_(number)).lyrics()
     
     def lyrics(self) -> str:
-        bottle_number = BottleNumber.for_(self.number)
-        
-        return f"{bottle_number}".capitalize() + " of milk on the wall, " + \
-               f"{bottle_number} of milk.\n" + \
-               f"{bottle_number.action()}, " + \
-               f"{bottle_number.successor()} of milk on the wall.\n"
+        return f"{self.bottle_number}".capitalize() + " of milk on the wall, " + \
+               f"{self.bottle_number} of milk.\n" + \
+               f"{self.bottle_number.action()}, " + \
+               f"{self.bottle_number.successor()} of milk on the wall.\n"
 
 
 class BottleNumber():
