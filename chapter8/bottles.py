@@ -21,7 +21,7 @@ class BottleVerse():
     
     @classmethod
     def lyrics(cls, number) -> str:
-        bottle_number = BottleNumber(number).for_(number)
+        bottle_number = BottleNumber.for_(number)
         
         return f"{bottle_number}".capitalize() + " of milk on the wall, " + \
                f"{bottle_number} of milk.\n" + \
@@ -51,7 +51,8 @@ class BottleNumber():
     def successor(self) -> int:
         return BottleNumber(self.number - 1).for_(self.number - 1)
     
-    def for_(self, number:int):
+    @classmethod
+    def for_(cls, number:int):
         match number:
             case 0:
                 return BottleNumber0(number)
