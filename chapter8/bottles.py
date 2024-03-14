@@ -1,4 +1,8 @@
 class Bottles():
+    def __init__(self, verse_template=None) -> None:
+        self.verse_template = \
+            verse_template if verse_template is not None else BottleVerse
+        
     def song(self) -> str:
         return self.verses(99,0)
     
@@ -9,8 +13,7 @@ class Bottles():
         return result[:-1]
     
     def verse(self, number:int) -> str:
-        return BottleVerse(number).lyrics()
-
+        return self.verse_template(number).lyrics()
 
 class BottleVerse():
     def __init__(self, number) -> None:
