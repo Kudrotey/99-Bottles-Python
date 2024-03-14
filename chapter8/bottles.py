@@ -13,15 +13,18 @@ class Bottles():
         return result[:-1]
     
     def verse(self, number:int) -> str:
-        return self.verse_template.lyrics(number)
+        return self.verse_template.get_lyrics(number)
 
 class BottleVerse():
     def __init__(self, number) -> None:
         self.number = number
     
     @classmethod
-    def lyrics(cls, number) -> str:
-        bottle_number = BottleNumber.for_(number)
+    def get_lyrics(cls, number):
+        return cls(number).lyrics()
+    
+    def lyrics(self) -> str:
+        bottle_number = BottleNumber.for_(self.number)
         
         return f"{bottle_number}".capitalize() + " of milk on the wall, " + \
                f"{bottle_number} of milk.\n" + \
