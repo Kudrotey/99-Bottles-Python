@@ -16,6 +16,7 @@ class CountdownSong():
     def verse(self, number:int) -> str:
         return self.verse_template.get_lyrics(number)
 
+
 class BottleVerse():
     def __init__(self, number) -> None:
         self.bottle_number = number
