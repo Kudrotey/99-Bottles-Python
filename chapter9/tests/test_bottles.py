@@ -2,7 +2,21 @@ from ..bottles import CountdownSong
 from ..bottles import BottleNumber,BottleNumber0, BottleNumber1, BottleNumber6
 from ..bottles import BottleVerse
 
+class FakeVerse:
+    @classmethod
+    def get_lyrics(cls, number:int) -> str:
+        return f"This is verse {number}.\n"
+
 class TestCountdownSong:
+    def test_a_couple_of_verses(self):
+        expected = "This is verse 99.\n" + \
+                   "\n" + \
+                   "This is verse 98.\n" + \
+                   "\n" + \
+                   "This is verse 97.\n"
+        
+        assert expected == CountdownSong(FakeVerse).verses(99, 97)
+
     def test_the_first_two_verses(self):
         expected = "99 bottles of milk on the wall, " + \
                 "99 bottles of milk.\n" + \
