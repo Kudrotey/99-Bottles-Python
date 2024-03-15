@@ -17,24 +17,6 @@ class TestCountdownSong:
         
         assert expected == CountdownSong(FakeVerse).verses(99, 97)
 
-    def test_the_last_three_verses(self):
-        expected = "2 bottles of milk on the wall, " + \
-                "2 bottles of milk.\n" + \
-                "Take one down and pass it around, " + \
-                "1 bottle of milk on the wall.\n" + \
-                "\n" + \
-                "1 bottle of milk on the wall, " + \
-                "1 bottle of milk.\n" + \
-                "Take it down and pass it around, " + \
-                "no more bottles of milk on the wall.\n" + \
-                "\n" + \
-                "No more bottles of milk on the wall, " + \
-                "no more bottles of milk.\n" + \
-                "Go to the store and buy some more, " + \
-                "99 bottles of milk on the wall.\n"
-
-        assert expected == CountdownSong().verses(2,0)
-
     def test_the_whole_song(self):
         expected = \
             "99 bottles of milk on the wall, 99 bottles of milk.\n" + \
