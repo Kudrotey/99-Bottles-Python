@@ -16,6 +16,11 @@ class TestCountdownSong:
                    "This is verse 97.\n"
         
         assert expected == CountdownSong(FakeVerse).verses(99, 97)
+        
+    def test_verse(self):
+        expected = "This is verse 132.\n"
+        
+        assert expected == CountdownSong(FakeVerse).verse(132)
 
     def test_the_whole_song(self):
         expected = \
