@@ -267,7 +267,6 @@ class TestBottleVerse:
         
         assert expected == BottleVerse.get_lyrics(3)  
         
-        
     def test_verse_2(self):
         expected = "2 bottles of milk on the wall, " + \
                 "2 bottles of milk.\n" + \
@@ -275,7 +274,6 @@ class TestBottleVerse:
                 "1 bottle of milk on the wall.\n"
         
         assert expected == BottleVerse.get_lyrics(2)
-        
         
     def test_verse_1(self):
         expected = "1 bottle of milk on the wall, " + \
@@ -285,7 +283,6 @@ class TestBottleVerse:
         
         assert expected == BottleVerse.get_lyrics(1)
         
-        
     def test_verse_0(self):
         expected = "No more bottles of milk on the wall, " + \
                 "no more bottles of milk.\n" + \
@@ -293,3 +290,19 @@ class TestBottleVerse:
                 "99 bottles of milk on the wall.\n"
         
         assert expected == BottleVerse.get_lyrics(0)
+        
+    def test_verse_7(self):
+        expected = "7 bottles of milk on the wall, " + \
+                   "7 bottles of milk.\n" + \
+                   "Take one down and pass it around, " + \
+                   "1 six-pack of milk on the wall.\n"
+                    
+        assert expected == BottleVerse.get_lyrics(7)
+        
+    def test_verse_6(self):
+        expected = "1 six-pack of milk on the wall, " + \
+                   "1 six-pack of milk.\n" + \
+                   "Take one down and pass it around, " + \
+                   "5 bottles of milk on the wall.\n"
+                    
+        assert expected == BottleVerse.get_lyrics(6)
