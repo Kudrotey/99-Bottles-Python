@@ -251,7 +251,7 @@ class TestBottleNumber:
         
 
 class TestBottleVerse:
-    def test_the_first_verse(self):
+    def test_verse_general_rule_upper_bound(self):
         expected = "99 bottles of milk on the wall, " + \
                 "99 bottles of milk.\n" + \
                 "Take one down and pass it around, " + \
@@ -259,7 +259,7 @@ class TestBottleVerse:
         
         assert expected == BottleVerse.get_lyrics(99)
         
-    def test_another_verse(self):
+    def test_verse_general_rule_lower_bound(self):
         expected = "3 bottles of milk on the wall, " + \
                 "3 bottles of milk.\n" + \
                 "Take one down and pass it around, " + \
