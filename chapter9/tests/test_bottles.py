@@ -8,7 +8,12 @@ class FakeVerse:
         return f"This is verse {number}.\n"
 
 class TestCountdownSong:
-    def test_a_couple_of_verses(self):
+    def test_verse(self):
+        expected = "This is verse 132.\n"
+        
+        assert expected == CountdownSong(FakeVerse).verse(132)
+        
+    def test_verses(self):
         expected = "This is verse 99.\n" + \
                    "\n" + \
                    "This is verse 98.\n" + \
@@ -17,11 +22,6 @@ class TestCountdownSong:
         
         assert expected == CountdownSong(FakeVerse).verses(99, 97)
         
-    def test_verse(self):
-        expected = "This is verse 132.\n"
-        
-        assert expected == CountdownSong(FakeVerse).verse(132)
-
     def test_the_whole_song(self):
         expected = \
             "99 bottles of milk on the wall, 99 bottles of milk.\n" + \
