@@ -34,7 +34,7 @@ class TestCountdownSong:
                    "This is verse 50.\n"
                    
         assert expected == CountdownSong(
-                                         FakeVerse, 
+                                         verse_template=FakeVerse, 
                                          max_verse=54, 
                                          min_verse=50
                                         ).song()
