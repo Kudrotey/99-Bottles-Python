@@ -1,8 +1,8 @@
-from ..bottles import Bottles
+from ..bottles import CountdownSong
 from ..bottles import BottleNumber,BottleNumber0, BottleNumber1, BottleNumber6
 from ..bottles import BottleVerse
 
-class TestBottles:
+class TestCountdownSong:
     def test_the_first_two_verses(self):
         expected = "99 bottles of milk on the wall, " + \
                 "99 bottles of milk.\n" + \
@@ -14,7 +14,7 @@ class TestBottles:
                 "Take one down and pass it around, " + \
                 "97 bottles of milk on the wall.\n"
 
-        assert expected == Bottles().verses(99,98)
+        assert expected == CountdownSong().verses(99,98)
 
     def test_the_last_three_verses(self):
         expected = "2 bottles of milk on the wall, " + \
@@ -32,7 +32,7 @@ class TestBottles:
                 "Go to the store and buy some more, " + \
                 "99 bottles of milk on the wall.\n"
 
-        assert expected == Bottles().verses(2,0)
+        assert expected == CountdownSong().verses(2,0)
 
     def test_the_whole_song(self):
         expected = \
@@ -237,7 +237,7 @@ class TestBottles:
             "No more bottles of milk on the wall, no more bottles of milk.\n" + \
             "Go to the store and buy some more, 99 bottles of milk on the wall.\n"
 
-        assert expected == Bottles().song()
+        assert expected == CountdownSong().song()
         
         
 class TestBottleNumber:

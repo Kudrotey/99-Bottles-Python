@@ -1,4 +1,4 @@
-class Bottles():
+class CountdownSong():
     def __init__(self, verse_template=None) -> None:
         self.verse_template = \
             verse_template if verse_template is not None else BottleVerse
