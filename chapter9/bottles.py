@@ -1,9 +1,9 @@
 class CountdownSong():
-    def __init__(self, verse_template=None, max_verse:int=99, min_verse:int=0) -> None:
-        self.verse_template = \
-            verse_template if verse_template is not None else BottleVerse
+    def __init__(self, verse_template, max_verse:int=999, min_verse:int=0) -> None:
+        self.verse_template = verse_template
         self.max_verse = max_verse
         self.min_verse = min_verse
+        
     def song(self) -> str:
         return self.verses(self.max_verse, self.min_verse)
     
